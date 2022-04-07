@@ -9,10 +9,12 @@ function reducer (state=initialState,action){
         case 'INCREMENT':
             return{
                 ...state,
+                count:state.count + state.setInter
             }
-        case 'SET_INTERVAL':
+        case 'SET_INTER':
             return{
-                
+                ...state,
+                setInter: parseInt(action.newValue)
         }
     }
 }

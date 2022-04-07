@@ -1,12 +1,24 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
-export function Increment() {
-    const inc = useSelector()
+function Increment() {
+    const dispatch = useDispatch();
+    const onHandlerChange = (even)=>{
+        dispatch({
+            type: 'INCREMENT',
+            payload: even.target.value
+        })
+    }
+    const onHandlerClick = (even)=>{
+
+    }
     return (
-    <h1>
-        Increment is {}
-    </h1>
+        <div>
+            <label htmlFor = "interval">interval</label> 
+            <input type = "number" onChange={onHandlerChange} id="interval" placeholder="Enter Interval"/>
+            <br />
+            <button type = "button" onClick={onHandlerClick}></button>
+        </div>
   )
 }
 
